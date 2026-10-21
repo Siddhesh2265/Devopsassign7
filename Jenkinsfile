@@ -8,13 +8,13 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'python3 -m py_compile app.py test_app.py'
-                sh 'python3 app.py'
+                bat 'python -m py_compile app.py test_app.py'
+                bat 'python app.py'
             }
         }
         stage('Test') {
             steps {
-                sh 'python3 test_app.py'
+                bat 'python test_app.py'
             }
         }
     }
